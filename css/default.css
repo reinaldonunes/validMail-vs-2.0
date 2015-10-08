@@ -1,0 +1,269 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+/*
+CodeWork v:2.0 beta - HTML & CSS Framework
+
+* Code Manager and streamlined, reusable web structure.
+* Copyright (c) 2015 Reinaldo "Ramon" José Nunes
+
+* Version: 2.0 (12/08/2015)
+* Requires: Web browsers that support the new features of HTML5 and CSS3.
+
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size:1em; /* 16px; */
+    font: inherit;
+    list-style:none;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+figure{
+    line-height:0px;
+}
+img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+select{ /* desativa o bottão padrão dos selects */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ie-appearance: none;
+}
+a,button, .transition{
+    transition-duration:0.4s;
+    -webkit-transition-duration:0.4s;
+    -moz-transition-duration:0.4s;
+}
+a{
+    text-decoration:none;
+}
+
+body{
+    padding:5% 0px;
+    background:#222;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, hgroup, menu, section{
+    display: block;
+}
+header,footer,nav:after,
+header,footer,nav:before{
+    content: "";
+    display: inherit;
+    clear: both;
+}
+
+.clear{
+    clear:both;
+}
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+:focus, :visited{
+    outline: 0;
+}
+textarea{
+    resize:none;
+}
+h1{
+    font:700 38px 'Open Sans',sans-serif;
+    color:#fff;
+    width:100%;
+    padding:30px 0px;
+    display:table;
+    text-align:center;
+}
+
+/* ALIGNS */
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+
+/* GRIDS */
+form{
+    margin:0 auto;
+    width:50em;
+    height:100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.border_box{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+    /* grid inputs */
+    .input_field{
+        width:100%;
+        padding:17px 20px;
+        border:1px solid #aaa;
+        border-radius:6px;
+        background:none;
+        margin-bottom:10px;
+        box-sizing:border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        
+        font:normal 14px 'Open Sans',sans-serif;
+        color:#fff;
+        
+        transition-duration:0.2s;
+        -moz-transition-duration:0.2s;
+        -webkit-transition-duration:0.2s;
+    }
+    .small_input{
+        width:49%;
+    }
+    .small_three{
+        width:32%;
+    }
+
+    .input_field:focus, .focus{
+        border-color:#C99F63;
+    }
+    
+    .msg{
+        min-height:150px;
+        height:160px /* para navegadores que não entendem o min-height, como o IE e o Firefox */
+    }
+
+/* Tipografia */
+h1,h2,h3,h4,h5,h6,a,span,p,select,button,input,textarea{
+    font-family:'Open Sans',sans-serif;
+}
+
+a,span,p{
+    font-size:14px;
+    font-weight:300;
+    color:#ccc;
+}
+p{
+    margin-bottom:20px;
+    line-height:20px;
+}
+p:last-child{
+    margin-bottom:0px;
+}
+
+select#state{
+    padding:16px;
+}
+input[type=file]{
+    padding:15px 22px;
+}
+
+.btn_send{
+    width:270px;
+    background:#eee;
+    font:300 15px 'Open Sans',sans-serif;
+    text-align:center;
+    border:0px;
+    display:table;
+    color:#212121;
+    border-radius:6px;
+    padding:17px 5px 18px 5px;
+    cursor: pointer;
+}
+.bt_small{
+    width:22%;
+}
+.btn_send:hover{
+    background:#C99F63;
+    color:#fff;
+}
+
+/* formulários */
+#form_cadastro{
+    display:table;
+    height:auto;
+    width:40em;
+    margin-top:7%;
+}
+
+.input_big_city{
+    width:55%;
+}
+.input_select{
+    width:43%;
+    padding:17px 20px 15px 20px;
+    float:right;
+    color:#aaa;
+    background:#222;
+}
+.confirma_dados{
+    width:100%;
+    margin-bottom:25px;
+    display:table;
+    height:auto;
+}
+#confirma{
+    float:left;
+    margin-top:0px;
+    margin-left:0px;
+    border:0px;
+    padding:0px;
+    display:table;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor: pointer;
+}
+
+.input_confirma{
+    margin-top:8px;
+    margin-right:15px;
+    width:22px;
+    display:table;
+    height:22px;
+    border-radius:50%;
+    cursor: pointer;
+    background:#fff;
+}
+.input_confirma:hover,
+.input_confirma.mark{
+    background:url("../img/opt_mark.png") no-repeat center center;
+}
+
+p{
+    width:100%;
+    margin-top:30px;
+    background:#111;
+    height:auto;
+    display:inline-table;
+    text-align:center;
+    font-size:15px;
+    color:#C99F63;
+}
