@@ -19,8 +19,8 @@
 				<option value="State">State Option</option>
 				<option value="State">State Option</option>
 			</select>
-			<input type="text" name="cpf" placeholder="CPF:" class="input_field small_input left" />
-			<input type="file" name="files" id="files" placeholder="Select Files" class="input_field small_input right" />
+			<input type="file" name="files" id="files" placeholder="Select Files" class="input_field small_input left" />
+			<input type="text" name="cpf" placeholder="CPF:" class="input_field small_input right" />
 			<textarea name="message" class="input_field msg" placeholder="Mesage:"></textarea>
 			<span class="left">
 				<input type="checkbox" name="confirm" id="confirm" value="" />

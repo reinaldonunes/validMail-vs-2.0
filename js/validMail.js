@@ -82,51 +82,38 @@
 				
 				
 				// CPF Validation
-				$('input[placeholder="CPF:"]').blur(function(){
-					alert("entrei no cpf");
-                    var cpf = $(this).val();
-					alert(cpf.length);
-                    var numeros, digitos, soma, i, resultado, digitos_iguais;
-                    digitos_iguais = 1;
-                    if (cpf.length < 11) return false;
-                    for (i = 0; i < cpf.length - 1; i++){
-                        if (cpf.charAt(i) != cpf.charAt(i + 1)){
-                            digitos_iguais = 0;
-                            break;
-                       }
-                        
-                        if (!digitos_iguais) {
-                            numeros = cpf.substring(0,9);
-                            digitos = cpf.substring(9);
-                            soma = 0;
-                            for (i = 10; i > 1; i--){
-                                soma += numeros.charAt(10 - i) * i;
-                                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-                                
-                                if (resultado != digitos.charAt(0)) return false;
-                                numeros = cpf.substring(0,10);
-                                soma = 0;
-                                
-                                for (i = 11; i > 1; i--){
-                                    soma += numeros.charAt(11 - i) * i;
-                                    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-                                    if (resultado != digitos.charAt(1)){
-                                        return false;
-                                    }
-                                    return true;
-                               }
-                            }
-                        }else{
-                            vazio++;
-                            $(settings.display).html("the typed <strong>CPF</strong> not available");                                            
-                            $(this).focus();
-                            return true;
-                       }
-                    }
-                    return true;
-                	});
+				if(idCampo == 'CPF:'){ 
+					var cpf = $(this).val();
+					cpf = cpf.replace(/[^\d]+/g,'');    
+					   
+					if (cpf.length != 11 ||	cpf == "00000000000" ||	cpf == "11111111111" ||	cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" ||	cpf == "66666666666" ||	cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999"){
+						alert("cpf não válido");
+						vazio++;
+						return false;
+					}       
+					var i;
+					var add; 
+					for (i=0;i < 9; i ++){       
+						add += parseInt(cpf.charAt(i)) * (10 - i);  
+						rev = 11 - (add % 11);  
+						if (rev == 10 || rev == 11) rev = 0;    
+						if (rev != parseInt(cpf.charAt(9))) return false;
+					
+						add = 0;    
+						for (i = 0; i < 10; i ++){      
+							add += parseInt(cpf.charAt(i)) * (11 - i);  
+							var rev = 11 - (add % 11);  
+							if (rev == 10 || rev == 11) rev = 0;    
+							if (rev != parseInt(cpf.charAt(10))) return false;      
+							
+							vazio = 0;
+							alert("cpf correto");
+							return true;   
+						}
+					}
+				} // end cpf validation
 			});
-			
+				
 			// If you have no errors in key fields, check if there are any checkbox to mark
 			if(vazio == 0){
 				if(settings.check != ""){
