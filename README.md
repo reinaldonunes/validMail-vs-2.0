@@ -15,11 +15,11 @@ The default settings are:
 
 # Customization
 The valueMail 2.0 enables validation of various fields of the form:
-- Checkbox confirmation
-- File format accepted by the input file.
-- Password confirmation and password
-- CPF Validation (based on 11 digits)
-- 
+- Checkbox confirmation;
+- File format accepted by the input file;
+- Password confirmation and password;
+- CPF Validation (based on 11 digits);
+
 Note: For fields such as telephone, cpf, zip, among others, may include mark fields for training. Field CPF, specifically, must use a 11-digit-based formatting mask.
 
 # Get Started
